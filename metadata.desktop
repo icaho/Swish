@@ -1,0 +1,16 @@
+[SddmGreeterTheme]
+Name=Swish
+Description=Based on the glorious Sweet sddm theme
+Author=Matt Thorpe (orig Eliver Lara)
+Copyright=(c) 2019, Eliver Lara
+License=GPL 3+
+Type=sddm-theme
+Version=0.1
+Website=https://github.com/Icaho/Swish
+Screenshot=preview.png
+MainScript=Main.qml
+ConfigFile=theme.conf
+TranslationsDirectory=translations
+Email=mjthorpe@elitemail.org
+Theme-Id=Swish
+Theme-API=2.0
