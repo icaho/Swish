@@ -3,10 +3,9 @@ import "components"
 import QtQuick 2.2
 import QtQuick.Layouts 1.2
 import QtQuick.Controls 2.4
-import QtQuick.Controls.Styles 1.4
 
 import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.components 3.0 as PlasmaComponents
 
 SessionManagementScreen {
     id: root
@@ -50,6 +49,8 @@ SessionManagementScreen {
         text: lastUserName
         visible: showUsernamePrompt
         focus: showUsernamePrompt && !lastUserName //if there's a username prompt it gets focus first, otherwise password does
+        Layout.topMargin: 10
+        Layout.bottomMargin: 10
         placeholderText: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Username")
 
         onAccepted:
@@ -97,7 +98,7 @@ SessionManagementScreen {
             }
         }
     }
-    Button {
+    PlasmaComponents.Button {
         id: loginButton
         text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Log In")
         enabled: passwordBox.text != ""
@@ -107,11 +108,11 @@ SessionManagementScreen {
         
         font.pointSize: config.fontSize
         font.family: config.font
+        opacity: enabled ? 1.0 : 0.8
 
         contentItem: Text {
             text: loginButton.text
             font: loginButton.font
-            opacity: enabled ? 1.0 : 0.8
             color: "#ffffff"
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
@@ -123,8 +124,8 @@ SessionManagementScreen {
             height: parent.width
             width: height / 9
             radius: width / 2
-                rotation: -90
-                anchors.centerIn: parent
+            rotation: -90
+            anchors.centerIn: parent
 
             gradient: Gradient {
                 GradientStop { position: 0.0; color: "#032490" }
